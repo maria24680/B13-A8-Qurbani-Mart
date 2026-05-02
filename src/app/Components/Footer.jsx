@@ -6,7 +6,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-     <footer className="footer p-10 bg-green-700 text-white border-t border-green-400 flex flex-col md:flex-row justify-between">
+     <footer className="footer p-10 bg-green-900 text-white border-t border-green-400 flex flex-col md:flex-row justify-between">
  
   <div>
     <h1 className="footer-title opacity-100 ">Qurbani Mart</h1>
@@ -45,6 +45,8 @@ const Footer = () => {
       </a>
     </div>
   </nav>
+
+  
 </footer>
     );
 };

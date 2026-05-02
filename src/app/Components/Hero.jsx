@@ -15,12 +15,12 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <Image 
           src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=1600" 
-          alt="Beach Background"
+          alt="Qurbani background"
           fill
           className="object-cover opacity-60"
         />
        
-        <div className="absolute inset-0 backdrop-blur-[2px] bg-sky-900/10"></div>
+        
       </div>
 
       <div className="relative z-10 flex flex-col md:flex-row h-full">

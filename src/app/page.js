@@ -1,17 +1,24 @@
-import Link from "next/link"
+import Hero from "./Components/Hero";
+import FeaturedAnimals from "./Components/FeaturedAnimals";
+import FeaturesBar from "./Components/FeaturesBar";
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch("http://localhost:3000/data/animals.json", {
+    cache: "no-store",
+  });
+
+  const animals = await res.json();
+
   return (
-    <div className="p-10 text-center">
-      <h1 className="text-4xl font-bold text-green-700">
-        QurbaniMart
-      </h1>
+    <>
+      {/* HERO SECTION */}
+      <Hero />
 
-      <p className="mt-4">Find best animals for Qurbani</p>
+      {/* FEATURES BAR (Healthy / Safe / Price / Support) */}
+      <FeaturesBar />
 
-      <Link href="/animals" className="mt-6 inline-block bg-green-700 text-white px-6 py-2 rounded">
-        Browse Animals
-      </Link>
-    </div>
-  )
+      {/* FEATURED ANIMALS */}
+      <FeaturedAnimals animals={animals} />
+    </>
+  );
 }
