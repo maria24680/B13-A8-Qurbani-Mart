@@ -27,7 +27,7 @@ const path=usePathname();
       <li>
         
         <Link
-          href="/products"
+          href="/All Animals"
           className={`hover:text-green-700 font-semibold transition-colors ${
             path === "/All Animals" ? "border-b-2 border-green-900" : ""
           }`}
