@@ -14,7 +14,7 @@ const Hero = () => {
       
       <div className="absolute inset-0 z-0">
         <Image 
-          src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=1600" 
+          src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9" 
           alt="Qurbani background"
           fill
           className="object-cover opacity-60"

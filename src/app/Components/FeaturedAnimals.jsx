@@ -1,4 +1,4 @@
-import AnimalCard from "./AnimalCard";
+
 
 export default function FeaturedAnimals({ animals }) {
   return (
@@ -15,9 +15,7 @@ export default function FeaturedAnimals({ animals }) {
 
       {/* GRID */}
       <div className="grid md:grid-cols-4 gap-6">
-        {animals.slice(0, 4).map((animal) => (
-          <AnimalCard key={animal.id} animal={animal} />
-        ))}
+        
       </div>
     </section>
   );

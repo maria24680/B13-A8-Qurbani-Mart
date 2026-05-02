@@ -1,13 +1,15 @@
 import Hero from "./Components/Hero";
 import FeaturedAnimals from "./Components/FeaturedAnimals";
 import FeaturesBar from "./Components/FeaturesBar";
+import QurbaniInfo from "./Components/QurbaniInfo";
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/data/animals.json", {
-    cache: "no-store",
+  fetch("http://localhost:3000/data/animals.json", {
+  cache: "no-store",
+
   });
 
-  const animals = await res.json();
+  
 
   return (
     <>
@@ -18,7 +20,8 @@ export default async function Home() {
       <FeaturesBar />
 
       {/* FEATURED ANIMALS */}
-      <FeaturedAnimals animals={animals} />
+      <FeaturedAnimals  />
+      <QurbaniInfo />
     </>
   );
 }
