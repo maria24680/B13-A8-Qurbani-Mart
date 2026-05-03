@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -68,27 +67,21 @@ const path=usePathname();
 
       {/* Action Area */}
       <div className="navbar-end gap-4">
-        
 
-        <div className="avatar">
-          <div className="w-10 h-10 rounded-full ring-2 ring-green-900 ring-offset-base-100 ring-offset-2 cursor-pointer">
-            <Image 
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" 
-              width={40} 
-              height={40} 
-              alt="User profile"
-              className="rounded-full"
-            />
-          </div>
-        </div>
-
-        <Link 
-          href="/logout" 
+      
+        <Link
+        href="Login" 
           className="py-2 px-6 rounded-full bg-green-700 text-sm font-bold text-white hover:bg-green-900 transition-all duration-300 shadow-sm"
         >
-          Logout
-        </Link>
+          Login/Register
         
+        </Link>
+
+        
+       
+        
+
+       
       </div>
     </div>
   );

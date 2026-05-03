@@ -14,14 +14,14 @@ export default async function Home() {
   return (
     <>
       {/* HERO SECTION */}
-      <Hero />
+      <Hero></Hero>
 
       {/* FEATURES BAR (Healthy / Safe / Price / Support) */}
-      <FeaturesBar />
+      <FeaturesBar></FeaturesBar>
 
       {/* FEATURED ANIMALS */}
-      <FeaturedAnimals  />
-      <QurbaniInfo />
+      <FeaturedAnimals></FeaturedAnimals>
+      <QurbaniInfo></QurbaniInfo>
     </>
   );
 }
