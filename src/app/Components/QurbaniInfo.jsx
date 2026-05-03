@@ -30,32 +30,32 @@ export default function QurbaniSection() {
           <div className="grid grid-cols-2 gap-4 mt-4">
             <div className="text-center">
               <img
-                src="https://images.unsplash.com/photo-1600758208050-7b2f3a5c3c3c"
-                className="w-20 h-20 mx-auto rounded-full object-cover"
+                src="/animals/cow3.jpg"
+                className="w-30 h-30 mx-auto rounded-full object-cover"
               />
               <p className="mt-2 font-semibold">Sahiwal</p>
               <p className="text-xs text-gray-500">Cow</p>
             </div>
             <div className="text-center">
               <img
-                src="https://images.unsplash.com/photo-1620192360206-9b8c0d6a7b5c"
-                className="w-20 h-20 mx-auto rounded-full object-cover"
+                src="/animals/cow2.jpg"
+                className="w-30 h-30 mx-auto rounded-full object-cover"
               />
-              <p className="mt-2 font-semibold">Friesian</p>
+              <p className="mt-2 font-semibold">Premium Holstein</p>
               <p className="text-xs text-gray-500">Cow</p>
             </div>
             <div className="text-center">
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-                className="w-20 h-20 mx-auto rounded-full object-cover"
+                src="/animals/goat3.jpg"
+                className="w-30 h-30 mx-auto rounded-full object-cover"
               />
-              <p className="mt-2 font-semibold">Sirohi</p>
+              <p className="mt-2 font-semibold">Deshi</p>
               <p className="text-xs text-gray-500">Goat</p>
             </div>
             <div className="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1612774412771-4b8c3f6a5c0a"
-                className="w-20 h-20 mx-auto rounded-full object-cover"
+              <img 
+                src="/animals/goat1.jpg"
+                className="w-30 h-30 mx-auto rounded-full object-cover"
               />
               <p className="mt-2 font-semibold">Black Bengal</p>
               <p className="text-xs text-gray-500">Goat</p>

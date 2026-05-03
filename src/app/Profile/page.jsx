@@ -16,7 +16,7 @@ const ProfileCardUI = () => {
   if (isPending) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-slate-50">
-        <BiLoaderAlt className="animate-spin text-sky-500" size={32} />
+        <BiLoaderAlt className="animate-spin text-green-700" size={32} />
       </div>
     );
   }
@@ -32,7 +32,7 @@ const ProfileCardUI = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-slate-50 p-6">
       <div className="relative w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
-        <div className="absolute top-0 left-0 w-full h-32 bg-yellow-400" />
+        <div className="absolute top-0 left-0 w-full h-32 bg-green-900" />
         <div className="relative pt-16 pb-8 px-6">
           <div className="flex justify-center mb-6">
             <div className="relative">
@@ -60,7 +60,7 @@ const ProfileCardUI = () => {
           <div className="space-y-3 mb-8">
             <div className="flex items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
               <div className="p-2 bg-white rounded-lg shadow-sm mr-3">
-                <FaMailBulk size={16} className="text-yellow-500" />
+                <FaMailBulk size={16} className="text-green-700" />
               </div>
               <div className="flex flex-col overflow-hidden">
                 <span className="text-[10px] text-slate-400 font-bold uppercase">Email</span>
@@ -69,10 +69,9 @@ const ProfileCardUI = () => {
             </div>
           </div>
 
-          {/* Change: This now navigates to a new route */}
           <Link href="/Edit"
              
-            className="group w-full py-4 bg-sky-500 hover:bg-yellow-400 hover:text-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg"
+            className="group w-full py-4 bg-green-900 hover:bg-green-700  text-white rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg"
           >
             Update Profile
             <FaExternalLinkAlt size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

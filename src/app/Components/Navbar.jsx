@@ -88,7 +88,7 @@ console.log(user)
 
     {/* User Avatar */}
     <Link href="/Profile" className="avatar">
-      <div className="w-10 h-10 rounded-full ring-2 ring-yellow-500 ring-offset-base-100 ring-offset-2 cursor-pointer overflow-hidden">
+      <div className="w-10 h-10 rounded-full ring-2 ring-green-900 ring-offset-base-100 ring-offset-2 cursor-pointer overflow-hidden">
         <Image 
           src={user.image}
           width={40} 
@@ -102,13 +102,13 @@ console.log(user)
   <div className="navbar-end gap-">
     <Link 
       href="/Login" 
-      className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500 transition-all duration-300 shadow-sm"
+      className="py-2 px-6 rounded-full bg-green-900 text-sm font-bold text-white hover:bg-green-700 transition-all duration-300 shadow-sm"
     >
       Login
     </Link>
     <Link 
       href="/Register" 
-      className="py-2 px-6 rounded-full bg-yellow-500 text-sm font-bold text-white hover:bg-sky-500 transition-all duration-300 shadow-sm"
+      className="py-2 px-6 rounded-full bg-green-900 text-sm font-bold text-white hover:bg-green-700 transition-all duration-300 shadow-sm"
     >
       Register
     </Link>

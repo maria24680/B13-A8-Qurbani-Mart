@@ -9,7 +9,7 @@
     "age": 3,
     "location": "Bogura",
     "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural food.",
-    "image": "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=800",
+    "image": "/animals/cow1.jpg",
     "category": "Large Animal"
   },
   {
@@ -22,7 +22,7 @@
     "age": 4,
     "location": "Dhaka",
     "description": "High quality Holstein cow, strong and healthy.",
-    "image": "https://images.unsplash.com/photo-1596733430284-f7437764b1a9?w=800",
+    "image": "/animals/cow2.jpg",
     "category": "Large Animal"
   },
   {
@@ -35,7 +35,7 @@
     "age": 2,
     "location": "Khulna",
     "description": "Famous Black Bengal goat, strong and healthy.",
-    "image": "https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=800",
+    "image": "/animals/goat1.jpg",
     "category": "Small Animal"
   },
   {
@@ -48,7 +48,7 @@
     "age": 3,
     "location": "Rajshahi",
     "description": "Imported Boer goat, large size and premium quality.",
-    "image": "https://images.unsplash.com/photo-1620192366897-4f4a4d6d9f5a?w=800",
+    "image": "/animals/goat2.jpg",
     "category": "Small Animal"
   },
   {
@@ -61,7 +61,7 @@
     "age": 5,
     "location": "Chattogram",
     "description": "Healthy deshi cow suitable for Qurbani.",
-    "image": "https://images.unsplash.com/photo-1604908177522-0405d1c6b5c7?w=800",
+    "image": "/animals/goat3.jpg",
     "category": "Small Animal"
   },
   {
@@ -74,7 +74,7 @@
     "age": 4,
     "location": "Sirajganj",
     "description": "Premium Sahiwal breed cow, very healthy.",
-    "image": "https://images.unsplash.com/photo-1551730459-92db2a308d6a?w=800",
+    "image": "/animals/cow3.jpg",
     "category": "Large Animal"
   }
 ]
