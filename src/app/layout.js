@@ -1,7 +1,12 @@
+import dns from "node:dns"
+dns.setServers(['8.8.8.8','8.8.4.4'])
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer"
+import ToastProvider from "./ToastProvider";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +38,7 @@ export default function RootLayout({ children }) {
     <main className="flex-grow">
       {children}      
     </main>
-    
+    <ToastProvider /> 
     <Footer />       
 
   </body>

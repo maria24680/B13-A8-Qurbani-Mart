@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Lottie from "lottie-react";
+import Link from 'next/link';
 
 
 
@@ -42,9 +43,9 @@ const Hero = () => {
             <p className="text-lg md:text-xl font-medium text-black mb-8 opacity-95 max-w-md drop-shadow">
               Explore a wide range of healty & quality cows & goats for your Qurbani.
             </p>
-            <button className="btn btn-lg bg-green-900 border-none hover:bg-green-900 text-white px-10 shadow-xl transition-all hover:scale-105">
+            <Link  href="/animals" className="btn btn-lg bg-green-900 border-none hover:bg-green-900 text-white px-10 shadow-xl transition-all hover:scale-105">
             Browse Animals
-            </button>
+            </Link>
           </div>
         </div>
 
