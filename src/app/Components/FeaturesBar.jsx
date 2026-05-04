@@ -1,11 +1,31 @@
-import { FaCheckCircle, FaTruck, FaTag, FaHeadset } from "react-icons/fa";
+'use client'
+import Lottie from "lottie-react";
+import Verified from "../../../public/animation/verified.json"
+import Transport from "../../../public/animation/transport.json"
+import Price from "../../../public/animation/price.json"
+import Support from "../../../public/animation/support.json"
 
 export default function FeaturesBar() {
+
+  const getAnimation = (title) => {
+    switch (title) {
+      case "Healthy & Verified":
+        return Verified;
+      case "Safe Transport":
+        return Transport;
+      case "Fair Price":
+        return Price;
+      case "24/7 Support":
+        return Support;
+      default:
+        return null;
+    }
+  };
   const items = [
-    { icon: <FaCheckCircle />, title: "Healthy & Verified" },
-    { icon: <FaTruck />, title: "Safe Transport" },
-    { icon: <FaTag />, title: "Fair Price" },
-    { icon: <FaHeadset />, title: "24/7 Support" },
+    { title: "Healthy & Verified" },
+    { title: "Safe Transport" },
+    { title: "Fair Price" },
+    { title: "24/7 Support" },
   ];
 
   return (
@@ -15,10 +35,17 @@ export default function FeaturesBar() {
           key={i}
           className="bg-white shadow rounded-lg p-5 flex items-center gap-3"
         >
-          <div className="text-green-900 text-2xl">{item.icon}</div>
+          <figure className="flex justify-center items-center pt-6">
+              <Lottie  animationData={getAnimation(item.title)} loop={true} className="w-40" />
+            </figure>
           <div className="font-medium">{item.title}</div>
         </div>
       ))}
     </div>
   );
 }
+
+
+
+
+

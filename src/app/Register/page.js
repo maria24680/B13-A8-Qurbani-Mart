@@ -29,22 +29,34 @@ const router = useRouter();
     const { data: res, error } = await authClient.signUp.email({
       name: name,
       email: email,
-      password: password,
       image: image,
+      password: password,
       callbackURL: "/Login",
     });
 
 
-    if (error) {
-      toast.error(error.message);
-    }
-
-    if (res) {
-      toast.success(`Welcome Qurbani Mart, ${name}`);
-     
-      router.push("/Login"); 
-    }
-  };
+    if (!form.name || !form.email || !form.image ||!password) {
+          toast.warning("Please fill all fields!");
+          return;
+        }
+    
+        setLoading(true);
+    
+        setTimeout(() => {
+          toast.success("Welcome to Qurbani Mart");
+    
+          setForm({
+            name: "",
+            email: "",
+            image: "",
+            password:"",
+          });
+    
+          setLoading(false);
+        }, 1000);
+      };
+    
+    
 
   const handlegoogle = async () => {
     const data = await authClient.signIn.social({

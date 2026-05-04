@@ -8,9 +8,16 @@ import { toast } from "react-toastify";
 export default function DetailsPage() {
   const { id } = useParams();
   const router = useRouter();
+  
 
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
+
+   useEffect(() => {
+    if (!user && !isPending) {
+      router.push("/Login");
+    }
+  }, [user, isPending, router]);
 
   const [animal, setAnimal] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -67,7 +74,7 @@ export default function DetailsPage() {
     setLoading(true);
 
     setTimeout(() => {
-      toast.success("🎉 Booking Successful!");
+      toast.success("Booking Successful!");
 
       setForm({
         name: "",
