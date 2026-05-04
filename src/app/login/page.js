@@ -16,36 +16,32 @@ const Login = () => {
   } = useForm();
 
   const handlelogin = async (data) => {
-    const { email, password } = data;
+  const { email, password } = data;
 
-    if (!email || !password) {
-      toast.warning("Please fill all fields!");
-      return;
-    }
+  if (!email || !password) {
+    toast.warning("Please fill all fields!");
+    return;
+  }
 
-    try {
-      const { data: res, error } = await authClient.signIn.email({
-        email,
-        password,
-        callbackURL: "/?login=success",
-      });
+  try {
+    await authClient.signIn.email({
+      email,
+      password,
+    });
 
-      if (error) {
-        toast.error(error.message || "Login failed!");
-        return;
-      }
+   toast.success("Welcome to Qurbani Mart");
 
-      toast.success("Welcome to Qurbani Mart", {
-  autoClose: 5000,
-});
-    } catch (err) {
-      toast.error("Something went wrong!");
-    }
-  };
+setTimeout(() => {
+  window.location.href = "/";
+}, 1000);
 
+  } catch (err) {
+    toast.error(err?.message || "Login failed!");
+  }
+};
   const handlegoogle = async () => {
     try {
-     toast.info("Redirecting to Google...");
+     toast.info("Login to Google...");
 await authClient.signIn.social({
   provider: "google",
 });
