@@ -40,7 +40,7 @@ const router = useRouter();
     }
 
     if (res) {
-      toast.success(`Welcome to Sun Cart, ${name}`);
+      toast.success(`Welcome Qurbani Mart, ${name}`);
      
       router.push("/Login"); 
     }
@@ -121,13 +121,13 @@ const router = useRouter();
           {/* button */}
           <button
             
-            className="w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-900 transition"
+            className="w-full bg-green-900 text-white py-2 rounded-lg hover:bg-green-700 font-medium transition"
           >
             Register
           </button>
 
           {/* link */}
-          <p className="text-center text-sm text-green-900 mt-4">
+          <p className="text-center text-sm text-green-900 mt-3 font-bold">
             Already have an account?{" "}
             <Link href="/Login" className="underline text-black">
               Login
@@ -136,16 +136,18 @@ const router = useRouter();
 
         </form>
 
-        <div className="flex gap-4">
-          <button
-            onClick={handlegoogle}
-            type="button"
-            className="flex-1 flex items-center justify-center gap-2 bg-sky-400 hover:bg-yellow-400 text-white py-2 rounded-lg transition-all active:scale-95 shadow-sm font-medium"
-          >
-            <FaGoogle className="text-white" />
-            Google
-          </button>
-        </div>
+         <p className="text-center font-bold text-black">OR</p>
+        
+                <div className="flex gap-4">
+                  <button
+                    onClick={handlegoogle}
+                    type="button"
+                    className="flex-1 flex items-center justify-center rounded-lg gap-2 bg-green-900 hover:bg-green-700 text-white py-2  transition active:scale-95 shadow-sm font-medium"
+                  >
+                    <FaGoogle className="text-white" />
+                    Continue with Google
+                  </button>
+                </div>
         
       </div>
 

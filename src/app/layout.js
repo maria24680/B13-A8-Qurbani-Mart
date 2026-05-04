@@ -8,6 +8,9 @@ import Footer from "./Components/Footer"
 import ToastProvider from "./ToastProvider";
 import "react-toastify/dist/ReactToastify.css";
 
+
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,6 +27,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html
   lang="en"
@@ -32,7 +36,7 @@ export default function RootLayout({ children }) {
 >
   <body className="min-h-full flex flex-col">
     
-    <Navbar /> 
+    <Navbar/> 
          
     
     <main className="flex-grow">

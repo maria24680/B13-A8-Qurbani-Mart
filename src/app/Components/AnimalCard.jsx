@@ -31,7 +31,12 @@ export default function AnimalCard({ animal }) {
           ৳ {animal?.price}
         </p>
 
-         
+        <Link
+          href={`/details/${animal?.id}`}
+          className="block mt-3 text-center bg-green-700 text-white py-2 rounded hover:bg-green-900"
+        >
+          View Details
+        </Link>
       </div>
     </div>
   );

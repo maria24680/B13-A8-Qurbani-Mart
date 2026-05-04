@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -7,6 +8,9 @@ import { toast } from "react-toastify";
 export default function DetailsPage() {
   const { id } = useParams();
   const router = useRouter();
+
+  const { data: session, isPending } = authClient.useSession();
+  const user = session?.user;
 
   const [animal, setAnimal] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -18,6 +22,7 @@ export default function DetailsPage() {
     address: "",
   });
 
+  // 🔥 FETCH ANIMAL DATA
   useEffect(() => {
     fetch("/data/animals.json")
       .then((res) => res.json())
@@ -27,23 +32,33 @@ export default function DetailsPage() {
       });
   }, [id]);
 
-  // login check
-  const isLoggedIn =
-    typeof window !== "undefined" && localStorage.getItem("user");
+  // 🔥 LOADING SESSION
+  if (isPending) {
+    return <p className="text-center mt-10">Loading...</p>;
+  }
 
+  // 🔥 LOADING ANIMAL
+  if (!animal) {
+    return <p className="text-center mt-10">Loading...</p>;
+  }
+
+  // 🔥 INPUT CHANGE
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // 🔥 SUBMIT BOOKING
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!isLoggedIn) {
+    // 🚨 LOGIN CHECK
+    if (!user) {
       toast.error("Please login first!");
-      router.push("/login");
+      router.push("/Login");
       return;
     }
 
+    // 🚨 FORM VALIDATION
     if (!form.name || !form.email || !form.phone || !form.address) {
       toast.warning("Please fill all fields!");
       return;
@@ -65,10 +80,6 @@ export default function DetailsPage() {
     }, 1000);
   };
 
-  if (!animal) {
-    return <p className="text-center mt-10">Loading...</p>;
-  }
-
   return (
     <div className="max-w-7xl mx-auto p-6">
 
@@ -79,35 +90,23 @@ export default function DetailsPage() {
           <img
             src={animal.image}
             className="w-full h-full object-cover rounded-xl"
+            alt={animal.name}
           />
-
-          
         </div>
 
         {/* DETAILS */}
         <div>
-
           <h1 className="text-3xl font-bold">{animal.name}</h1>
 
-          <p className="text-gray-500 mt-1">
-            Type: {animal.type}
-          </p>
-
-          <p className="text-gray-500 mt-1">
-            Breed: {animal.breed}
-          </p>
+          <p className="text-gray-500 mt-1">Type: {animal.type}</p>
+          <p className="text-gray-500 mt-1">Breed: {animal.breed}</p>
 
           <p className="text-xl font-bold text-green-700 mt-2">
             Price: {animal.price}
           </p>
 
-          <p className="text-gray-500 mt-1">
-            Weight: {animal.weight}
-          </p>
-
-          <p className="text-gray-500 mt-1">
-            Age: {animal.age}
-          </p>
+          <p className="text-gray-500 mt-1">Weight: {animal.weight}</p>
+          <p className="text-gray-500 mt-1">Age: {animal.age}</p>
 
           <p className="mt-3 text-gray-600">
             Location: {animal.location}
@@ -126,7 +125,6 @@ export default function DetailsPage() {
             onSubmit={handleSubmit}
             className="mt-6 border p-4 rounded-xl shadow"
           >
-
             <h2 className="text-xl font-bold mb-3">
               Booking Form
             </h2>
@@ -174,12 +172,10 @@ export default function DetailsPage() {
             >
               {loading ? "Processing..." : "Place Booking"}
             </button>
-
           </form>
-
         </div>
-      </div>
 
+      </div>
     </div>
   );
 }

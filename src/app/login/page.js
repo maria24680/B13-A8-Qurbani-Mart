@@ -24,7 +24,7 @@ const{email,password}=data;
   
     email: email,
     password:password,
-    callbackURL:"/",
+    callbackURL: "/?login=success"
 });
 
 if(error){
@@ -85,13 +85,13 @@ const handlegoogle=async()=>{
           {/* button */}
           <button
           
-            className="w-full bg-green-900 text-white py-2 rounded-lg hover:bg-green-700 transition"
+            className="w-full bg-green-900 text-white py-2 rounded-lg hover:bg-green-700 font-medium transition-all"
           >
             Login
           </button>
 
           {/* link */}
-          <p className="text-center text-sm text-green-900 mt-4">
+          <p className="text-center text-sm text-green-900 mt-3 font-bold">
             Don&apos;t have an account?{" "}
             <Link href="/Register" className="underline text-black">
               Sign up
@@ -100,14 +100,16 @@ const handlegoogle=async()=>{
 
         </form>
 
+        <p className="text-center font-bold text-black">OR</p>
+
         <div className="flex gap-4">
           <button
             onClick={handlegoogle}
             type="button"
-            className="flex-1 flex items-center justify-center gap-2 bg-sky-400 hover:bg-yellow-400 text-white py-2 rounded-lg transition-all active:scale-95 shadow-sm font-medium"
+            className="flex-1 flex items-center justify-center rounded-lg gap-2 bg-green-900 hover:bg-green-700 text-white py-2  transition-all active:scale-95 shadow-sm font-medium"
           >
             <FaGoogle className="text-white" />
-            Google
+            Continue with Google
           </button>
         </div>
       </div>

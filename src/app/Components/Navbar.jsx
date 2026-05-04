@@ -8,10 +8,10 @@ import React from 'react';
 
 const Navbar = () => {
 const path=usePathname();
-
+const hideNavLinks = path === "/Login" || path === "/Register";
 const { data: session } = authClient.useSession()
 const user =session?.user
-console.log(user)
+
 
   const navLinks = (
       <>
@@ -43,20 +43,23 @@ console.log(user)
     <div className="navbar bg-base-100 shadow-md px-4 lg:px-8">
       <div className="navbar-start">
         {/* Mobile Dropdown */}
-   <div className="dropdown">
-  <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
-    </svg>
-  </div>
+   {/* Mobile Dropdown */}
+{!hideNavLinks && (
+  <div className="dropdown">
+    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+      </svg>
+    </div>
 
-  <ul 
-    tabIndex={0} 
-    className="menu menu-sm dropdown-content bg-transparent rounded-box z-100 absolute mt-3 w-52 p-2 shadow-2xl gap-2 text-black"
-  >
-    {navLinks}
-  </ul>
-</div>
+    <ul 
+      tabIndex={0} 
+      className="menu menu-sm dropdown-content bg-transparent rounded-box z-100 absolute mt-3 w-52 p-2 shadow-2xl gap-2 text-black"
+    >
+      {navLinks}
+    </ul>
+  </div>
+)}
         
         {/* Logo */}
         <div className=" text-2xl font-bold tracking-tight">
@@ -66,10 +69,12 @@ console.log(user)
 
       {/* Desktop Menu */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-6 text-white">
-          {navLinks}
-        </ul>
-      </div>
+  {!hideNavLinks && (
+    <ul className="menu menu-horizontal px-1 gap-6 text-white">
+      {navLinks}
+    </ul>
+  )}
+</div>
 
       
      {user ? (

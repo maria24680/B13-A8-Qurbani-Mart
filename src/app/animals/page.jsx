@@ -116,7 +116,7 @@ export default function AllAnimalsPage() {
                 Location: {animal.location}
               </p>
 
-              <Link href={`/animals/${animal.id}`}>
+              <Link href={`/details/${animal.id}`}>
                 <button className="mt-4 w-full bg-green-700 text-white py-2 rounded hover:bg-green-900">
                   View Details
                 </button>
