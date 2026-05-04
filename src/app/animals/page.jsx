@@ -80,8 +80,8 @@ export default function AllAnimalsPage() {
           onChange={(e) => setSortType(e.target.value)}
         >
           <option value="default">Sort by price</option>
-          <option value="low">High to Low</option>
-          <option value="high">Low to High</option>
+          <option value="low">Low to High</option>
+          <option value="high">High to Low</option>
         </select>
       </div>
       </div>

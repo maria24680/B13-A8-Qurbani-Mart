@@ -45,7 +45,7 @@ console.log(user)
         {/* Mobile Dropdown */}
    <div className="dropdown">
   <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
     </svg>
   </div>
@@ -99,20 +99,21 @@ console.log(user)
     </Link>
   </div>
 ) : (
-  <div className="navbar-end gap-">
-    <Link 
-      href="/Login" 
-      className="py-2 px-6 rounded-full bg-green-900 text-sm font-bold text-white hover:bg-green-700 transition-all duration-300 shadow-sm"
-    >
-      Login
-    </Link>
-    <Link 
-      href="/Register" 
-      className="py-2 px-6 rounded-full bg-green-900 text-sm font-bold text-white hover:bg-green-700 transition-all duration-300 shadow-sm"
-    >
-      Register
-    </Link>
-  </div>
+  <div className="navbar-end flex flex-row flex-wrap justify-end gap-2 sm:gap-3">
+  <Link 
+    href="/Login" 
+    className="py-2 px-3 sm:px-5 rounded-full bg-green-900 text-xs sm:text-sm font-bold text-white hover:bg-green-700 transition-all duration-300 shadow-sm"
+  >
+    Login
+  </Link>
+
+  <Link 
+    href="/Register" 
+    className="py-2 px-3 sm:px-5 rounded-full bg-green-900 text-xs sm:text-sm font-bold text-white hover:bg-green-700 transition-all duration-300 shadow-sm"
+  >
+    Register
+  </Link>
+</div>
 )}
     </div>
   );
