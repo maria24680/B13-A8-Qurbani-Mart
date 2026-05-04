@@ -108,7 +108,7 @@ const handlegoogle=async()=>{
             type="button"
             className="flex-1 flex items-center justify-center rounded-lg gap-2 bg-green-900 hover:bg-green-700 text-white py-2  transition-all active:scale-95 shadow-sm font-medium"
           >
-            <FaGoogle className="text-white" />
+            <FaGoogle className="text-black" />
             Continue with Google
           </button>
         </div>
