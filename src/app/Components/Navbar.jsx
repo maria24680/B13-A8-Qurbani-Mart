@@ -42,7 +42,7 @@ const user =session?.user
   return (
     <div className="navbar bg-base-100 shadow-md px-4 lg:px-8">
       <div className="navbar-start">
-        {/* Mobile Dropdown */}
+        
    {/* Mobile Dropdown */}
 {!hideNavLinks && (
   <div className="dropdown">
